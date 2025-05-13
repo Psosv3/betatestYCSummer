@@ -137,15 +137,3 @@ const createScrollProgress = () => {
 
 // Initialize scroll progress
 createScrollProgress();
-
-// Add loading state to buttons
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        if (!this.classList.contains('btn-outline')) {
-            this.classList.add('loading');
-            setTimeout(() => {
-                this.classList.remove('loading');
-            }, 2000);
-        }
-    });
-}); 
