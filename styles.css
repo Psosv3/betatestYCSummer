@@ -141,7 +141,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% auto;
-    animation: gradientText 5s ease infinite;
+    animation: gradientText 3s ease infinite;
 }
 
 .hero-text .subheadline {
@@ -223,7 +223,8 @@ body {
 /* How It Works Section */
 .how-it-works {
     padding: 4rem 0;
-    background: var(--background-light);
+    background: -webkit-linear-gradient(150deg, #F9FAFB 90%, #3ae0fd 92%, #F9FAFB 94%), url('./logo/background_geometric.webp');
+    background: linear-gradient(150deg, #F9FAFB 90%, #3ae0fd 92%, #F9FAFB 94%), url('./logo/background_geometric.webp');
 }
 
 .steps {
@@ -286,7 +287,8 @@ body {
 /* Use Cases Section */
 .use-cases {
     padding: 4rem 0;
-    background: var(--background-light);
+    background: -webkit-linear-gradient(150deg, #F9FAFB 5%, #3ae0fd 7%, #F9FAFB 9%), url('./logo/background_geometric.webp');
+    background: linear-gradient(150deg, #F9FAFB 5%, #3ae0fd 7%, #F9FAFB 9%), url('./logo/background_geometric.webp');
 }
 
 .use-case-grid {
