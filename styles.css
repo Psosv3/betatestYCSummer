@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #4F46E5;
-    --primary-hover: #4338CA;
-    --secondary-color: #10B981;
+    --primary-color: #0152af;
+    --primary-hover: #079dcf;
+    --secondary-color: #3ae0fd;
     --text-color: #1F2937;
     --text-light: #6B7280;
     --background-light: #F9FAFB;
@@ -83,13 +83,12 @@ body {
 }
 
 .btn-primary {
-    background: var(--primary-color);
+    background: #019bf1;
     color: white;
 }
 
 .btn-primary:hover {
-    background: var(--primary-hover);
-    /* transform: translateY(-1px); */
+    background: #0152af;
 }
 
 .btn-secondary {
@@ -99,7 +98,7 @@ body {
 }
 
 .btn-secondary:hover {
-    background: var(--primary-color);
+    background: #9c9c9c;
     color: white;
 }
 
@@ -117,30 +116,72 @@ body {
 .hero {
     padding: 8rem 0 4rem;
     background: linear-gradient(to bottom, #fff, var(--background-light));
-    text-align: center;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
+/* Two-column flex layout */
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Left column: text */
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradientText 5s ease infinite;
 }
 
-.hero .subheadline {
-    font-size: 1.25rem;
+.hero-text .subheadline {
+    font-size: 1rem;
     color: var(--text-light);
     max-width: 800px;
-    margin: 0 auto 2rem;
+    margin-bottom: 2rem;
 }
 
 .cta-buttons {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+/* Right column: image */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1rem;  /* Rounded corners */
+}
+
+/* Gradient text animation */
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Benefits Section */
@@ -361,15 +402,30 @@ section h2 {
     .nav-links {
         display: none;
     }
-    
-    .hero h1 {
-        font-size: 2.5rem;
+
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
     }
-    
+
+    .hero-text {
+        text-align: center;
+    }
+
     .cta-buttons {
+        justify-content: center;
         flex-direction: column;
     }
-    
+
+    .hero-image {
+        margin-top: 2rem;
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
     .container {
         padding: 0 1rem;
     }
@@ -474,24 +530,6 @@ section h2 {
     transition: transform 0.3s ease;
 }
 
-/* Gradient Text Animation */
-@keyframes gradientText {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.hero h1 {
-    background-size: 200% auto;
-    animation: gradientText 5s ease infinite;
-}
-
 /* Card Hover Effects */
 .benefit-card,
 .feature-card,
@@ -590,4 +628,4 @@ section h2 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-hover);
-} 
+}
